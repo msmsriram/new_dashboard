@@ -674,7 +674,7 @@ def main():
 
             html_data = data.to_html(index=False)
             html_data = html_data.replace('<table', '<table style="table-layout: fixed;" ')
-            html_data = html_data.replace('<thead>', '<thead><style>th:first-child { width: 70px; } td, th { text-align: center; }</style>')
+            html_data = html_data.replace('<thead>', '<thead><style>th:first-child { width: 90px; } td, th { text-align: center; }</style>')
             st.markdown(html_data, unsafe_allow_html=True)
             #st.dataframe(data,hide_index=True)
             store_data=data.copy()
@@ -707,7 +707,7 @@ def main():
 
         html_data = data.to_html(index=False)
         html_data = html_data.replace('<table', '<table style="table-layout: fixed;" ')
-        html_data = html_data.replace('<thead>', '<thead><style>th:first-child { width: 70px; } td, th { text-align: center; }</style>')
+        html_data = html_data.replace('<thead>', '<thead><style>th:first-child { width: 90px; } td, th { text-align: center; }</style>')
         st.markdown(html_data, unsafe_allow_html=True)
         # st.dataframe(data,hide_index=True)
 
