@@ -488,57 +488,7 @@ def main():
             drug5_total_cost_per_patient=0
 
         # button_result=st.button("Apply Changes")
-        print("Drug 1")
-        print("Total Package Cost",drug1_total_package_cost)
-        print("Total Consulting Charges",drug1_total_consulting_charges)
-        print("Total Oct Charges",drug1_total_oct_charges)
-        print("Travel and Food Cost",drug1_total_travel_food_cost)
-        print("Total Opportunity Cost Lost",drug1_total_opportunity_cost_lost)
-        print("Total Cost/Patient",drug1_total_cost_per_patient)
-        print()
-        print()
-
-        print("Drug 2")
-        print("Total Package Cost",drug2_total_package_cost)
-        print("Total Consulting Charges",drug2_total_consulting_charges)
-        print("Total Oct Charges",drug2_total_oct_charges)
-        print("Travel and Food Cost",drug2_total_travel_food_cost)
-        print("Total Opportunity Cost Lost",drug2_total_opportunity_cost_lost)
-        print("Total Cost/Patient",drug2_total_cost_per_patient)
-        print()
-        print()
-
-        print("Drug 3")
-        print("Total Package Cost",drug3_total_package_cost)
-        print("Total Consulting Charges",drug3_total_consulting_charges)
-        print("Total Oct Charges",drug3_total_oct_charges)
-        print("Travel and Food Cost",drug3_total_travel_food_cost)
-        print("Total Opportunity Cost Lost",drug3_total_opportunity_cost_lost)
-        print("Total Cost/Patient",drug3_total_cost_per_patient)
-        print()
-        print()
-
-        print("Drug 4")
-        print("Total Package Cost",drug4_total_package_cost)
-        print("Total Consulting Charges",drug4_total_consulting_charges)
-        print("Total Oct Charges",drug4_total_oct_charges)
-        print("Travel and Food Cost",drug4_total_travel_food_cost)
-        print("Total Opportunity Cost Lost",drug4_total_opportunity_cost_lost)
-        print("Total Cost/Patient",drug4_total_cost_per_patient)
-        print()
-        print()
-
-        print("Drug 5")
-        print("Total Package Cost",drug5_total_package_cost)
-        print("Total Consulting Charges",drug5_total_consulting_charges)
-        print("Total Oct Charges",drug5_total_oct_charges)
-        print("Travel and Food Cost",drug5_total_travel_food_cost)
-        print("Total Opportunity Cost Lost",drug5_total_opportunity_cost_lost)
-        print("Total Cost/Patient",drug5_total_cost_per_patient)
-
-        print()
-        print()
-    # Main page
+            # Main page
     st.title('I-Open')
     data=pd.read_csv('Display_data.csv')
     def wes_to_indian_conversion(n):
