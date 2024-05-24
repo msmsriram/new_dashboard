@@ -4,8 +4,8 @@ import plotly.graph_objects as go
 
 
 def main():
-    with open('styles.css') as f:
-        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+    # with open('styles.css') as f:
+    #     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
     with st.sidebar:
         # st.image('https://www.vabysmo-hcp.com/content/dam/gene/vabysmo-hcp/logos/vabysmo-logo-og.genecoreimg.1200.png')
         drugs_selected = st.multiselect(
