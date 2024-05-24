@@ -8,7 +8,7 @@ PAGES = {
 
 
 # Page selection using radio buttons
-selected_page = st.radio("Select a page:", list(PAGES.keys()))
+selected_page = st.radio("",list(PAGES.keys()))
 
 # Store the selected page in session state
 if 'page' not in st.session_state or st.session_state.page != selected_page:
