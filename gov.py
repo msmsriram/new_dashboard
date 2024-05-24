@@ -1,10 +1,9 @@
 import streamlit as st
 import pandas as pd
-import plotly.graph_objects as go
+# import plotly.graph_objects as go
 
 def main():
-    # with open('styles.css') as f:
-    #     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+    
     with st.sidebar:
         # st.image('https://www.vabysmo-hcp.com/content/dam/gene/vabysmo-hcp/logos/vabysmo-logo-og.genecoreimg.1200.png')
         drugs_selected = st.multiselect(
@@ -219,211 +218,135 @@ def main():
                 drug2_dosage=st.sidebar.selectbox('Drug 2 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=2)
                 drug3_dosage=st.sidebar.selectbox('Drug 3 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=4)
                 drug4_dosage=st.sidebar.selectbox('Drug 4 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=7)
-                drug5_dosage=0
 
             elif 'Drug 1' in drugs_selected and 'Drug 2' in drugs_selected and 'Drug 3' in drugs_selected and 'Drug 4' not in drugs_selected and 'Drug 5' in drugs_selected:
                 drug1_dosage=st.sidebar.selectbox('Drug 1 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=2)
                 drug2_dosage=st.sidebar.selectbox('Drug 2 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=2)
                 drug3_dosage=st.sidebar.selectbox('Drug 3 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=4)
                 drug5_dosage=st.sidebar.selectbox('Drug 5 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=7)
-                drug4_dosage=0
 
             elif 'Drug 1' in drugs_selected and 'Drug 2' in drugs_selected and 'Drug 3' not in drugs_selected and 'Drug 4' in drugs_selected and 'Drug 5' in drugs_selected:
                 drug1_dosage=st.sidebar.selectbox('Drug 1 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=2)
                 drug2_dosage=st.sidebar.selectbox('Drug 2 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=2)
                 drug4_dosage=st.sidebar.selectbox('Drug 4 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=7)
                 drug5_dosage=st.sidebar.selectbox('Drug 5 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=7)
-                drug3_dosage=0
 
             elif 'Drug 1' in drugs_selected and 'Drug 2' not in drugs_selected and 'Drug 3' in drugs_selected and 'Drug 4' in drugs_selected and 'Drug 5' in drugs_selected:
                 drug1_dosage=st.sidebar.selectbox('Drug 1 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=2)
                 drug3_dosage=st.sidebar.selectbox('Drug 3 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=4)
                 drug4_dosage=st.sidebar.selectbox('Drug 4 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=7)
                 drug5_dosage=st.sidebar.selectbox('Drug 5 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=7)
-                drug2_dosage=0
             
             elif 'Drug 1' not in drugs_selected and 'Drug 2' in drugs_selected and 'Drug 3' in drugs_selected and 'Drug 4' in drugs_selected and 'Drug 5' in drugs_selected:
                 drug2_dosage=st.sidebar.selectbox('Drug 2 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=2)
                 drug3_dosage=st.sidebar.selectbox('Drug 3 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=4)
                 drug4_dosage=st.sidebar.selectbox('Drug 4 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=7)
                 drug5_dosage=st.sidebar.selectbox('Drug 5 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=7)
-                drug1_dosage=0
 
             elif 'Drug 1' in drugs_selected and 'Drug 2' in drugs_selected and 'Drug 3' in drugs_selected and 'Drug 4' not in drugs_selected and 'Drug 5' not in drugs_selected:
                 drug1_dosage=st.sidebar.selectbox('Drug 1 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=2)
                 drug2_dosage=st.sidebar.selectbox('Drug 2 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=2)
                 drug3_dosage=st.sidebar.selectbox('Drug 3 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=4)
-                drug5_dosage=0
-                drug4_dosage=0
 
             elif 'Drug 1' in drugs_selected and 'Drug 2' in drugs_selected and 'Drug 3' not in drugs_selected and 'Drug 4' not in drugs_selected and 'Drug 5' in drugs_selected:
                 drug1_dosage=st.sidebar.selectbox('Drug 1 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=2)
                 drug2_dosage=st.sidebar.selectbox('Drug 2 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=2)
                 drug5_dosage=st.sidebar.selectbox('Drug 5 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=7)
-                drug4_dosage=0
-                drug3_dosage=0
 
             elif 'Drug 1' in drugs_selected and 'Drug 2' not in drugs_selected and 'Drug 3' not in drugs_selected and 'Drug 4' in drugs_selected and 'Drug 5' in drugs_selected:
                 drug1_dosage=st.sidebar.selectbox('Drug 1 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=2)
                 drug4_dosage=st.sidebar.selectbox('Drug 4 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=7)
                 drug5_dosage=st.sidebar.selectbox('Drug 5 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=7)
-                drug2_dosage=0
-                drug3_dosage=0
 
             elif 'Drug 1' not in drugs_selected and 'Drug 2' not in drugs_selected and 'Drug 3' in drugs_selected and 'Drug 4' in drugs_selected and 'Drug 5' in drugs_selected:
                 drug3_dosage=st.sidebar.selectbox('Drug 3 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=4)
                 drug4_dosage=st.sidebar.selectbox('Drug 4 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=7)
                 drug5_dosage=st.sidebar.selectbox('Drug 5 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=7)
-                drug1_dosage=0
-                drug2_dosage=0
             
             elif 'Drug 1' in drugs_selected and 'Drug 2' not in drugs_selected and 'Drug 3' in drugs_selected and 'Drug 4' not in drugs_selected and 'Drug 5' in drugs_selected:
                 drug1_dosage=st.sidebar.selectbox('Drug 1 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=2)
                 drug3_dosage=st.sidebar.selectbox('Drug 3 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=4)
                 drug5_dosage=st.sidebar.selectbox('Drug 5 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=7)
-                drug4_dosage=0
-                drug2_dosage=0
             
             elif 'Drug 1' not in drugs_selected and 'Drug 2' in drugs_selected and 'Drug 3' not in drugs_selected and 'Drug 4' in drugs_selected and 'Drug 5' in drugs_selected:
                 drug2_dosage=st.sidebar.selectbox('Drug 2 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=2)
                 drug4_dosage=st.sidebar.selectbox('Drug 4 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=7)
                 drug5_dosage=st.sidebar.selectbox('Drug 5 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=7)
-                drug1_dosage=0
-                drug3_dosage=0
 
             elif 'Drug 1' in drugs_selected and 'Drug 2' not in drugs_selected and 'Drug 3' in drugs_selected and 'Drug 4' in drugs_selected and 'Drug 5' not in drugs_selected:
                 drug1_dosage=st.sidebar.selectbox('Drug 1 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=2)
                 drug3_dosage=st.sidebar.selectbox('Drug 3 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=4)
                 drug4_dosage=st.sidebar.selectbox('Drug 4 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=7)
-                drug2_dosage=0
-                drug5_dosage=0
 
             elif 'Drug 1' in drugs_selected and 'Drug 2' in drugs_selected and 'Drug 3' not in drugs_selected and 'Drug 4' in drugs_selected and 'Drug 5' not in drugs_selected:
                 drug1_dosage=st.sidebar.selectbox('Drug 1 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=2)
                 drug2_dosage=st.sidebar.selectbox('Drug 2 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=2)
                 drug4_dosage=st.sidebar.selectbox('Drug 4 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=7)
-                drug5_dosage=0
-                drug3_dosage=0
 
             elif 'Drug 1' not in drugs_selected and 'Drug 2' in drugs_selected and 'Drug 3' in drugs_selected and 'Drug 4' in drugs_selected and 'Drug 5' not in drugs_selected:
                 drug2_dosage=st.sidebar.selectbox('Drug 2 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=2)
                 drug3_dosage=st.sidebar.selectbox('Drug 3 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=4)
                 drug4_dosage=st.sidebar.selectbox('Drug 4 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=7)
-                drug5_dosage=0
-                drug1_dosage=0
             
             elif 'Drug 1' not in drugs_selected and 'Drug 2' in drugs_selected and 'Drug 3' in drugs_selected and 'Drug 4' not in drugs_selected and 'Drug 5' in drugs_selected:
                 drug2_dosage=st.sidebar.selectbox('Drug 2 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=2)
                 drug3_dosage=st.sidebar.selectbox('Drug 3 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=4)
                 drug5_dosage=st.sidebar.selectbox('Drug 5 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=7)
-                drug1_dosage=0
-                drug4_dosage=0
 
             elif 'Drug 1' in drugs_selected and 'Drug 2' in drugs_selected and 'Drug 3' not in drugs_selected and 'Drug 4' not in drugs_selected and 'Drug 5' not in drugs_selected:
                 drug1_dosage=st.sidebar.selectbox('Drug 1 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=2)
                 drug2_dosage=st.sidebar.selectbox('Drug 2 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=2)
-                drug3_dosage=0
-                drug4_dosage=0
-                drug5_dosage=0
 
             elif 'Drug 1' in drugs_selected and 'Drug 2' not in drugs_selected and 'Drug 3' in drugs_selected and 'Drug 4' not in drugs_selected and 'Drug 5' not in drugs_selected:
                 drug1_dosage=st.sidebar.selectbox('Drug 1 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=2)
                 drug3_dosage=st.sidebar.selectbox('Drug 3 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=4)
-                drug2_dosage=0
-                drug4_dosage=0
-                drug5_dosage=0
             
             elif 'Drug 1' in drugs_selected and 'Drug 2' not in drugs_selected and 'Drug 3' not in drugs_selected and 'Drug 4' in drugs_selected and 'Drug 5' not in drugs_selected:
                 drug1_dosage=st.sidebar.selectbox('Drug 1 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=2)
                 drug4_dosage=st.sidebar.selectbox('Drug 4 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=7)
-                drug2_dosage=0
-                drug3_dosage=0
-                drug5_dosage=0
 
             elif 'Drug 1' in drugs_selected and 'Drug 2' not in drugs_selected and 'Drug 3' not in drugs_selected and 'Drug 4' not in drugs_selected and 'Drug 5' in drugs_selected:
                 drug1_dosage=st.sidebar.selectbox('Drug 1 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=2)
                 drug5_dosage=st.sidebar.selectbox('Drug 5 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=7)
-                drug2_dosage=0
-                drug3_dosage=0
-                drug4_dosage=0
 
             elif 'Drug 1' not in drugs_selected and 'Drug 2' in drugs_selected and 'Drug 3' in drugs_selected and 'Drug 4' not in drugs_selected and 'Drug 5' not in drugs_selected:
                 drug2_dosage=st.sidebar.selectbox('Drug 2 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=2)
                 drug3_dosage=st.sidebar.selectbox('Drug 3 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=4)
-                drug1_dosage=0
-                drug4_dosage=0
-                drug5_dosage=0
             
             elif 'Drug 1' not in drugs_selected and 'Drug 2' in drugs_selected and 'Drug 3' not in drugs_selected and 'Drug 4' in drugs_selected and 'Drug 5' not in drugs_selected:
                 drug2_dosage=st.sidebar.selectbox('Drug 2 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=2)
                 drug4_dosage=st.sidebar.selectbox('Drug 4 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=7)
-                drug1_dosage=0
-                drug3_dosage=0
-                drug5_dosage=0
             
             elif 'Drug 1' not in drugs_selected and 'Drug 2' in drugs_selected and 'Drug 3' not in drugs_selected and 'Drug 4' not in drugs_selected and 'Drug 5' in drugs_selected:
                 drug2_dosage=st.sidebar.selectbox('Drug 2 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=2)
                 drug5_dosage=st.sidebar.selectbox('Drug 5 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=7)
-                drug1_dosage=0
-                drug3_dosage=0
-                drug4_dosage=0
 
             elif 'Drug 1' not in drugs_selected and 'Drug 2' not in drugs_selected and 'Drug 3' in drugs_selected and 'Drug 4' in drugs_selected and 'Drug 5' not in drugs_selected:
                 drug3_dosage=st.sidebar.selectbox('Drug 3 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=4)
                 drug4_dosage=st.sidebar.selectbox('Drug 4 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=7)
-                drug1_dosage=0
-                drug2_dosage=0
-                drug5_dosage=0
             
             elif 'Drug 1' not in drugs_selected and 'Drug 2' not in drugs_selected and 'Drug 3' in drugs_selected and 'Drug 4' not in drugs_selected and 'Drug 5' in drugs_selected:
                 drug3_dosage=st.sidebar.selectbox('Drug 3 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=4)
                 drug5_dosage=st.sidebar.selectbox('Drug 5 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=7)
-                drug1_dosage=0
-                drug2_dosage=0
-                drug4_dosage=0
 
             elif 'Drug 1' not in drugs_selected and 'Drug 2' not in drugs_selected and 'Drug 3' not in drugs_selected and 'Drug 4' in drugs_selected and 'Drug 5' in drugs_selected:
                 drug4_dosage=st.sidebar.selectbox('Drug 4 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=7)
                 drug5_dosage=st.sidebar.selectbox('Drug 5 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=7)
-                drug1_dosage=0
-                drug2_dosage=0
-                drug3_dosage=0
             
             elif 'Drug 1' in drugs_selected and 'Drug 2' not in drugs_selected and 'Drug 3' not in drugs_selected and 'Drug 4' not in drugs_selected and 'Drug 5' not in drugs_selected:
                 drug1_dosage=st.sidebar.selectbox('Drug 1 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=2)
-                drug2_dosage=0
-                drug3_dosage=0
-                drug4_dosage=0
-                drug5_dosage=0
-                
             
             elif 'Drug 1' not in drugs_selected and 'Drug 2' in drugs_selected and 'Drug 3' not in drugs_selected and 'Drug 4' not in drugs_selected and 'Drug 5' not in drugs_selected:
                 drug2_dosage=st.sidebar.selectbox('Drug 2 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=2)
-                drug1_dosage=0
-                drug3_dosage=0
-                drug4_dosage=0
-                drug5_dosage=0
             
             elif 'Drug 1' not in drugs_selected and 'Drug 2' not in drugs_selected and 'Drug 3' in drugs_selected and 'Drug 4' not in drugs_selected and 'Drug 5' not in drugs_selected:
                 drug3_dosage=st.sidebar.selectbox('Drug 3 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=4)
-                drug2_dosage=0
-                drug1_dosage=0
-                drug4_dosage=0
-                drug5_dosage=0
             
             elif 'Drug 1' not in drugs_selected and 'Drug 2' not in drugs_selected and 'Drug 3' not in drugs_selected and 'Drug 4' in drugs_selected and 'Drug 5' not in drugs_selected:
                 drug4_dosage=st.sidebar.selectbox('Drug 4 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=7)
-                drug2_dosage=0
-                drug3_dosage=0
-                drug1_dosage=0
-                drug5_dosage=0
             
             elif 'Drug 1' not in drugs_selected and 'Drug 2' not in drugs_selected and 'Drug 3' not in drugs_selected and 'Drug 4' not in drugs_selected and 'Drug 5' in drugs_selected:
                 drug5_dosage=st.sidebar.selectbox('Drug 5 RWE Dosage',['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],index=7)
-                drug2_dosage=0
-                drug3_dosage=0
-                drug4_dosage=0
-                drug1_dosage=0
             
         
         procedure_cost =st.sidebar.selectbox('Procedure Cost',['₹1000','₹1500','₹2000','₹2500','₹3000','₹3500','₹4000','₹4500','₹5000','₹6000','₹7000','₹8000','₹9000','₹10,000','₹11,000','₹12,000','₹13,000','₹14,000','₹15,000','₹16,000','₹17,000','₹18,000','₹19,000','₹20,000','₹21,000','₹22,000','₹23,000','₹24,000','₹25,000','₹26,000','₹27,000','₹28,000','₹29,000','₹30,000'])
@@ -564,8 +487,57 @@ def main():
             drug5_total_opportunity_cost_lost=0
             drug5_total_cost_per_patient=0
 
-        button_result=st.button("Apply Changes")
-        
+        # button_result=st.button("Apply Changes")
+        print("Drug 1")
+        print("Total Package Cost",drug1_total_package_cost)
+        print("Total Consulting Charges",drug1_total_consulting_charges)
+        print("Total Oct Charges",drug1_total_oct_charges)
+        print("Travel and Food Cost",drug1_total_travel_food_cost)
+        print("Total Opportunity Cost Lost",drug1_total_opportunity_cost_lost)
+        print("Total Cost/Patient",drug1_total_cost_per_patient)
+        print()
+        print()
+
+        print("Drug 2")
+        print("Total Package Cost",drug2_total_package_cost)
+        print("Total Consulting Charges",drug2_total_consulting_charges)
+        print("Total Oct Charges",drug2_total_oct_charges)
+        print("Travel and Food Cost",drug2_total_travel_food_cost)
+        print("Total Opportunity Cost Lost",drug2_total_opportunity_cost_lost)
+        print("Total Cost/Patient",drug2_total_cost_per_patient)
+        print()
+        print()
+
+        print("Drug 3")
+        print("Total Package Cost",drug3_total_package_cost)
+        print("Total Consulting Charges",drug3_total_consulting_charges)
+        print("Total Oct Charges",drug3_total_oct_charges)
+        print("Travel and Food Cost",drug3_total_travel_food_cost)
+        print("Total Opportunity Cost Lost",drug3_total_opportunity_cost_lost)
+        print("Total Cost/Patient",drug3_total_cost_per_patient)
+        print()
+        print()
+
+        print("Drug 4")
+        print("Total Package Cost",drug4_total_package_cost)
+        print("Total Consulting Charges",drug4_total_consulting_charges)
+        print("Total Oct Charges",drug4_total_oct_charges)
+        print("Travel and Food Cost",drug4_total_travel_food_cost)
+        print("Total Opportunity Cost Lost",drug4_total_opportunity_cost_lost)
+        print("Total Cost/Patient",drug4_total_cost_per_patient)
+        print()
+        print()
+
+        print("Drug 5")
+        print("Total Package Cost",drug5_total_package_cost)
+        print("Total Consulting Charges",drug5_total_consulting_charges)
+        print("Total Oct Charges",drug5_total_oct_charges)
+        print("Travel and Food Cost",drug5_total_travel_food_cost)
+        print("Total Opportunity Cost Lost",drug5_total_opportunity_cost_lost)
+        print("Total Cost/Patient",drug5_total_cost_per_patient)
+
+        print()
+        print()
     # Main page
     st.title('I-Open')
     data=pd.read_csv('Display_data.csv')
@@ -602,101 +574,101 @@ def main():
         n=n[1:]
         return int(n)
     
-    if button_result:
-            data.loc[0,'Total Package Cost']=wes_to_indian_conversion(drug1_total_package_cost)
-            data.loc[0,'Consulting Charges']=wes_to_indian_conversion(drug1_total_consulting_charges)
-            data.loc[0,'OCT Charges']=wes_to_indian_conversion(drug1_total_oct_charges)
-            data.loc[0,'Travel and Food Costs']=wes_to_indian_conversion(drug1_total_travel_food_cost)
-            data.loc[0,'Total Opportunity Cost Lost']=wes_to_indian_conversion(drug1_total_opportunity_cost_lost)
-            data.loc[0,'Total Cost/Patient']=wes_to_indian_conversion(drug1_total_cost_per_patient)
-        
-            data.loc[1,'Total Package Cost']=wes_to_indian_conversion(drug2_total_package_cost)
-            data.loc[1,'Consulting Charges']=wes_to_indian_conversion(drug2_total_consulting_charges)
-            data.loc[1,'OCT Charges']=wes_to_indian_conversion(drug2_total_oct_charges)
-            data.loc[1,'Travel and Food Costs']=wes_to_indian_conversion(drug2_total_travel_food_cost)
-            data.loc[1,'Total Opportunity Cost Lost']=wes_to_indian_conversion(drug2_total_opportunity_cost_lost)
-            data.loc[1,'Total Cost/Patient']=wes_to_indian_conversion(drug2_total_cost_per_patient)
-
-            data.loc[2,'Total Package Cost']=wes_to_indian_conversion(drug3_total_package_cost)
-            data.loc[2,'Consulting Charges']=wes_to_indian_conversion(drug3_total_consulting_charges)
-            data.loc[2,'OCT Charges']=wes_to_indian_conversion(drug3_total_oct_charges)
-            data.loc[2,'Travel and Food Costs']=wes_to_indian_conversion(drug3_total_travel_food_cost)
-            data.loc[2,'Total Opportunity Cost Lost']=wes_to_indian_conversion(drug3_total_opportunity_cost_lost)
-            data.loc[2,'Total Cost/Patient']=wes_to_indian_conversion(drug3_total_cost_per_patient)
-
-            data.loc[3,'Total Package Cost']=wes_to_indian_conversion(drug4_total_package_cost)
-            data.loc[3,'Consulting Charges']=wes_to_indian_conversion(drug4_total_consulting_charges)
-            data.loc[3,'OCT Charges']=wes_to_indian_conversion(drug4_total_oct_charges)
-            data.loc[3,'Travel and Food Costs']=wes_to_indian_conversion(drug4_total_travel_food_cost)
-            data.loc[3,'Total Opportunity Cost Lost']=wes_to_indian_conversion(drug4_total_opportunity_cost_lost)
-            data.loc[3,'Total Cost/Patient']=wes_to_indian_conversion(drug4_total_cost_per_patient)
-
-            data.loc[4,'Total Package Cost']=wes_to_indian_conversion(drug5_total_package_cost)
-            data.loc[4,'Consulting Charges']=wes_to_indian_conversion(drug5_total_consulting_charges)
-            data.loc[4,'OCT Charges']=wes_to_indian_conversion(drug5_total_oct_charges)
-            data.loc[4,'Travel and Food Costs']=wes_to_indian_conversion(drug5_total_travel_food_cost)
-            data.loc[4,'Total Opportunity Cost Lost']=wes_to_indian_conversion(drug5_total_opportunity_cost_lost)
-            data.loc[4,'Total Cost/Patient']=wes_to_indian_conversion(drug5_total_cost_per_patient)
-
-            import plotly.express as px
-
-            graph_data = data.copy()
-            graph_data['Total Package Cost'] = graph_data['Total Package Cost'].apply(str_to_int)
-            graph_data['Consulting Charges'] = graph_data['Consulting Charges'].apply(str_to_int)
-            graph_data['OCT Charges'] = graph_data['OCT Charges'].apply(str_to_int)
-            graph_data['Travel and Food Costs'] = graph_data['Travel and Food Costs'].apply(str_to_int)
-            graph_data['Total Opportunity Cost Lost'] = graph_data['Total Opportunity Cost Lost'].apply(str_to_int)
-            graph_data['Total Cost/Patient'] = graph_data['Total Cost/Patient'].apply(str_to_int)
-
-            melted_data = graph_data.melt(id_vars='Drugs', value_vars=['Total Package Cost', 'Consulting Charges', 'OCT Charges', 'Travel and Food Costs', 'Total Opportunity Cost Lost', 'Total Cost/Patient'])
-
-            # Divide 'value' by 1000 to convert to 'k'
-            melted_data['value'] = melted_data['value'] / 1000
-
-            fig = px.bar(melted_data, x='Drugs', y='value', color='variable', text='value', barmode='group', labels={'value': 'Cost in Thousands'}, hover_data=melted_data.columns, hover_name='variable')
-
-            # Update hovertemplate to reflect the change in 'value'
-            fig.update_traces(hovertemplate='Drug: %{x}<br>Cost Type: %{hovertext}<br>Total Cost: ₹%{y:,.0f}K',textposition="outside",insidetextfont=dict(size=16), outsidetextfont=dict(size=16))
-            fig.update_yaxes(tickprefix="₹",ticksuffix="k")
-            fig.update_layout(legend_title_text='Legend')
-            st.write(fig)
     
-            html_data = data.to_html(index=False)
-            html_data = html_data.replace('<table', '<table style="table-layout: fixed;" ')
-            html_data = html_data.replace('<thead>', '<thead><style>th:first-child { width: 90px; } td, th { text-align: center; }</style>')
-            st.markdown(html_data, unsafe_allow_html=True)    
-            # st.dataframe(data,hide_index=True)
-            store_data=data.copy()
-            store_data.to_csv('Display_data.csv',index=False)
+    data.loc[0,'Total Package Cost']=wes_to_indian_conversion(drug1_total_package_cost)
+    data.loc[0,'Consulting Charges']=wes_to_indian_conversion(drug1_total_consulting_charges)
+    data.loc[0,'OCT Charges']=wes_to_indian_conversion(drug1_total_oct_charges)
+    data.loc[0,'Travel and Food Costs']=wes_to_indian_conversion(drug1_total_travel_food_cost)
+    data.loc[0,'Total Opportunity Cost Lost']=wes_to_indian_conversion(drug1_total_opportunity_cost_lost)
+    data.loc[0,'Total Cost/Patient']=wes_to_indian_conversion(drug1_total_cost_per_patient)
 
-    else:
-        import plotly.express as px
+    data.loc[1,'Total Package Cost']=wes_to_indian_conversion(drug2_total_package_cost)
+    data.loc[1,'Consulting Charges']=wes_to_indian_conversion(drug2_total_consulting_charges)
+    data.loc[1,'OCT Charges']=wes_to_indian_conversion(drug2_total_oct_charges)
+    data.loc[1,'Travel and Food Costs']=wes_to_indian_conversion(drug2_total_travel_food_cost)
+    data.loc[1,'Total Opportunity Cost Lost']=wes_to_indian_conversion(drug2_total_opportunity_cost_lost)
+    data.loc[1,'Total Cost/Patient']=wes_to_indian_conversion(drug2_total_cost_per_patient)
 
-        graph_data = data.copy()
-        graph_data['Total Package Cost'] = graph_data['Total Package Cost'].apply(str_to_int)
-        graph_data['Consulting Charges'] = graph_data['Consulting Charges'].apply(str_to_int)
-        graph_data['OCT Charges'] = graph_data['OCT Charges'].apply(str_to_int)
-        graph_data['Travel and Food Costs'] = graph_data['Travel and Food Costs'].apply(str_to_int)
-        graph_data['Total Opportunity Cost Lost'] = graph_data['Total Opportunity Cost Lost'].apply(str_to_int)
-        graph_data['Total Cost/Patient'] = graph_data['Total Cost/Patient'].apply(str_to_int)
+    data.loc[2,'Total Package Cost']=wes_to_indian_conversion(drug3_total_package_cost)
+    data.loc[2,'Consulting Charges']=wes_to_indian_conversion(drug3_total_consulting_charges)
+    data.loc[2,'OCT Charges']=wes_to_indian_conversion(drug3_total_oct_charges)
+    data.loc[2,'Travel and Food Costs']=wes_to_indian_conversion(drug3_total_travel_food_cost)
+    data.loc[2,'Total Opportunity Cost Lost']=wes_to_indian_conversion(drug3_total_opportunity_cost_lost)
+    data.loc[2,'Total Cost/Patient']=wes_to_indian_conversion(drug3_total_cost_per_patient)
 
-        melted_data = graph_data.melt(id_vars='Drugs', value_vars=['Total Package Cost', 'Consulting Charges', 'OCT Charges', 'Travel and Food Costs', 'Total Opportunity Cost Lost', 'Total Cost/Patient'])
+    data.loc[3,'Total Package Cost']=wes_to_indian_conversion(drug4_total_package_cost)
+    data.loc[3,'Consulting Charges']=wes_to_indian_conversion(drug4_total_consulting_charges)
+    data.loc[3,'OCT Charges']=wes_to_indian_conversion(drug4_total_oct_charges)
+    data.loc[3,'Travel and Food Costs']=wes_to_indian_conversion(drug4_total_travel_food_cost)
+    data.loc[3,'Total Opportunity Cost Lost']=wes_to_indian_conversion(drug4_total_opportunity_cost_lost)
+    data.loc[3,'Total Cost/Patient']=wes_to_indian_conversion(drug4_total_cost_per_patient)
 
-        # Divide 'value' by 1000 to convert to 'k'
-        melted_data['value'] = melted_data['value'] / 1000
+    data.loc[4,'Total Package Cost']=wes_to_indian_conversion(drug5_total_package_cost)
+    data.loc[4,'Consulting Charges']=wes_to_indian_conversion(drug5_total_consulting_charges)
+    data.loc[4,'OCT Charges']=wes_to_indian_conversion(drug5_total_oct_charges)
+    data.loc[4,'Travel and Food Costs']=wes_to_indian_conversion(drug5_total_travel_food_cost)
+    data.loc[4,'Total Opportunity Cost Lost']=wes_to_indian_conversion(drug5_total_opportunity_cost_lost)
+    data.loc[4,'Total Cost/Patient']=wes_to_indian_conversion(drug5_total_cost_per_patient)
 
-        fig = px.bar(melted_data, x='Drugs', y='value', color='variable', text='value', barmode='group', labels={'value': 'Cost in Thousands'}, hover_data=melted_data.columns, hover_name='variable')
+    import plotly.express as px
 
-        # Update hovertemplate to reflect the change in 'value'
-        fig.update_traces(hovertemplate='Drug: %{x}<br>Cost Type: %{hovertext}<br>Total Cost: ₹%{y:,.0f}K',textposition="outside",insidetextfont=dict(size=16), outsidetextfont=dict(size=16))
-        fig.update_yaxes(tickprefix="₹",ticksuffix="k")
-        fig.update_layout(legend_title_text='Legend')
-        st.write(fig)
+    graph_data = data.copy()
+    graph_data['Total Package Cost'] = graph_data['Total Package Cost'].apply(str_to_int)
+    graph_data['Consulting Charges'] = graph_data['Consulting Charges'].apply(str_to_int)
+    graph_data['OCT Charges'] = graph_data['OCT Charges'].apply(str_to_int)
+    graph_data['Travel and Food Costs'] = graph_data['Travel and Food Costs'].apply(str_to_int)
+    graph_data['Total Opportunity Cost Lost'] = graph_data['Total Opportunity Cost Lost'].apply(str_to_int)
+    graph_data['Total Cost/Patient'] = graph_data['Total Cost/Patient'].apply(str_to_int)
+
+    melted_data = graph_data.melt(id_vars='Drugs', value_vars=['Total Package Cost', 'Consulting Charges', 'OCT Charges', 'Travel and Food Costs', 'Total Opportunity Cost Lost', 'Total Cost/Patient'])
+
+    # Divide 'value' by 1000 to convert to 'k'
+    melted_data['value'] = melted_data['value'] / 1000
+
+    fig = px.bar(melted_data, x='Drugs', y='value', color='variable', text='value', barmode='group', labels={'value': 'Cost in Thousands'}, hover_data=melted_data.columns, hover_name='variable')
+
+    # Update hovertemplate to reflect the change in 'value'
+    fig.update_traces(hovertemplate='Drug: %{x}<br>Cost Type: %{hovertext}<br>Total Cost: ₹%{y:,.0f}K',textposition="outside",insidetextfont=dict(size=16), outsidetextfont=dict(size=16))
+    fig.update_yaxes(tickprefix="₹",ticksuffix="k")
+    fig.update_layout(legend_title_text='Legend')
+    st.write(fig)
+
+    html_data = data.to_html(index=False)
+    html_data = html_data.replace('<table', '<table style="table-layout: fixed;" ')
+    html_data = html_data.replace('<thead>', '<thead><style>th:first-child { width: 70px; } td, th { text-align: center; }</style>')
+    st.markdown(html_data, unsafe_allow_html=True)    
+    # st.dataframe(data,hide_index=True)
+    store_data=data.copy()
+    store_data.to_csv('Display_data.csv',index=False)
+
+    # else:
+    #     import plotly.express as px
+
+    #     graph_data = data.copy()
+    #     graph_data['Total Package Cost'] = graph_data['Total Package Cost'].apply(str_to_int)
+    #     graph_data['Consulting Charges'] = graph_data['Consulting Charges'].apply(str_to_int)
+    #     graph_data['OCT Charges'] = graph_data['OCT Charges'].apply(str_to_int)
+    #     graph_data['Travel and Food Costs'] = graph_data['Travel and Food Costs'].apply(str_to_int)
+    #     graph_data['Total Opportunity Cost Lost'] = graph_data['Total Opportunity Cost Lost'].apply(str_to_int)
+    #     graph_data['Total Cost/Patient'] = graph_data['Total Cost/Patient'].apply(str_to_int)
+
+    #     melted_data = graph_data.melt(id_vars='Drugs', value_vars=['Total Package Cost', 'Consulting Charges', 'OCT Charges', 'Travel and Food Costs', 'Total Opportunity Cost Lost', 'Total Cost/Patient'])
+
+    #     # Divide 'value' by 1000 to convert to 'k'
+    #     melted_data['value'] = melted_data['value'] / 1000
+
+    #     fig = px.bar(melted_data, x='Drugs', y='value', color='variable', text='value', barmode='group', labels={'value': 'Cost in Thousands'}, hover_data=melted_data.columns, hover_name='variable')
+
+    #     # Update hovertemplate to reflect the change in 'value'
+    #     fig.update_traces(hovertemplate='Drug: %{x}<br>Cost Type: %{hovertext}<br>Total Cost: ₹%{y:,.0f}K',textposition="outside",insidetextfont=dict(size=16), outsidetextfont=dict(size=16))
+    #     fig.update_yaxes(tickprefix="₹",ticksuffix="k")
+    #     fig.update_layout(legend_title_text='Legend')
+    #     st.write(fig)
         
-        html_data = data.to_html(index=False)
-        html_data = html_data.replace('<table', '<table style="table-layout: fixed;" ')
-        html_data = html_data.replace('<thead>', '<thead><style>th:first-child { width: 90px; } td, th { text-align: center; }</style>')
-        st.markdown(html_data, unsafe_allow_html=True)
-        # st.dataframe(data,hide_index=True)
+    #     html_data = data.to_html(index=False)
+    #     html_data = html_data.replace('<table', '<table style="table-layout: fixed;" ')
+    #     html_data = html_data.replace('<thead>', '<thead><style>th:first-child { width: 70px; } td, th { text-align: center; }</style>')
+    #     st.markdown(html_data, unsafe_allow_html=True)
+    #     # st.dataframe(data,hide_index=True)
 
 
